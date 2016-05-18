@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55DA12A5-78F4-45C0-965A-B6841E452823}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication3</RootNamespace>
+    <AssemblyName>WebApplication3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.3.2.3\lib\net45\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20505.0\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20505.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>d:\Documents\Job\6_Clarity-AG\WebChat\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ChatModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ChatDatabase.mdf" />
+    <Content Include="App_Data\ChatDatabase_log.ldf">
+      <DependentUpon>ChatDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Emoticons\acute.gif" />
+    <Content Include="Content\Emoticons\aggressive.gif" />
+    <Content Include="Content\Emoticons\air_kiss.gif" />
+    <Content Include="Content\Emoticons\angel.gif" />
+    <Content Include="Content\Emoticons\bad.gif" />
+    <Content Include="Content\Emoticons\bb.gif" />
+    <Content Include="Content\Emoticons\beach.gif" />
+    <Content Include="Content\Emoticons\beee.gif" />
+    <Content Include="Content\Emoticons\big_boss.gif" />
+    <Content Include="Content\Emoticons\blum.gif" />
+    <Content Include="Content\Emoticons\blush.gif" />
+    <Content Include="Content\Emoticons\boast.gif" />
+    <Content Include="Content\Emoticons\bomb.gif" />
+    <Content Include="Content\Emoticons\boredom.gif" />
+    <Content Include="Content\Emoticons\bye.gif" />
+    <Content Include="Content\Emoticons\clapping.gif" />
+    <Content Include="Content\Emoticons\cray.gif" />
+    <Content Include="Content\Emoticons\crazy.gif" />
+    <Content Include="Content\Emoticons\curtsey.gif" />
+    <Content Include="Content\Emoticons\dance.gif" />
+    <Content Include="Content\Emoticons\dash.gif" />
+    <Content Include="Content\Emoticons\declare.gif" />
+    <Content Include="Content\Emoticons\diablo.gif" />
+    <Content Include="Content\Emoticons\dirol.gif" />
+    <Content Include="Content\Emoticons\don-t_mention.gif" />
+    <Content Include="Content\Emoticons\download.gif" />
+    <Content Include="Content\Emoticons\drinks.gif" />
+    <Content Include="Content\Emoticons\english_en.gif" />
+    <Content Include="Content\Emoticons\first_move.gif" />
+    <Content Include="Content\Emoticons\flirt.gif" />
+    <Content Include="Content\Emoticons\focus.gif" />
+    <Content Include="Content\Emoticons\fool.gif" />
+    <Content Include="Content\Emoticons\friends.gif" />
+    <Content Include="Content\Emoticons\gamer2.gif" />
+    <Content Include="Content\Emoticons\gamer4.gif" />
+    <Content Include="Content\Emoticons\girl_blum.gif" />
+    <Content Include="Content\Emoticons\girl_cray.gif" />
+    <Content Include="Content\Emoticons\girl_crazy.gif" />
+    <Content Include="Content\Emoticons\girl_dance.gif" />
+    <Content Include="Content\Emoticons\girl_devil.gif" />
+    <Content Include="Content\Emoticons\girl_drink.gif" />
+    <Content Include="Content\Emoticons\girl_drink1.gif" />
+    <Content Include="Content\Emoticons\girl_haha.gif" />
+    <Content Include="Content\Emoticons\girl_hide.gif" />
+    <Content Include="Content\Emoticons\girl_hospital.gif" />
+    <Content Include="Content\Emoticons\girl_impossible.gif" />
+    <Content Include="Content\Emoticons\girl_in_love.gif" />
+    <Content Include="Content\Emoticons\girl_mad.gif" />
+    <Content Include="Content\Emoticons\girl_pinkglassesf.gif" />
+    <Content Include="Content\Emoticons\girl_sad.gif" />
+    <Content Include="Content\Emoticons\girl_sigh.gif" />
+    <Content Include="Content\Emoticons\girl_smile.gif" />
+    <Content Include="Content\Emoticons\girl_wacko.gif" />
+    <Content Include="Content\Emoticons\girl_wink.gif" />
+    <Content Include="Content\Emoticons\girl_witch.gif" />
+    <Content Include="Content\Emoticons\give_heart.gif" />
+    <Content Include="Content\Emoticons\give_rose.gif" />
+    <Content Include="Content\Emoticons\good.gif" />
+    <Content Include="Content\Emoticons\heart.gif" />
+    <Content Include="Content\Emoticons\heat.gif" />
+    <Content Include="Content\Emoticons\help.gif" />
+    <Content Include="Content\Emoticons\hi.gif" />
+    <Content Include="Content\Emoticons\hunter.gif" />
+    <Content Include="Content\Emoticons\hysteric.gif" />
+    <Content Include="Content\Emoticons\i-m_so_happy.gif" />
+    <Content Include="Content\Emoticons\ireful.gif" />
+    <Content Include="Content\Emoticons\king.gif" />
+    <Content Include="Content\Emoticons\kiss.gif" />
+    <Content Include="Content\Emoticons\laugh.gif" />
+    <Content Include="Content\Emoticons\lazy.gif" />
+    <Content Include="Content\Emoticons\lol.gif" />
+    <Content Include="Content\Emoticons\mail.gif" />
+    <Content Include="Content\Emoticons\mamba.gif" />
+    <Content Include="Content\Emoticons\man_in_love.gif" />
+    <Content Include="Content\Emoticons\mda.gif" />
+    <Content Include="Content\Emoticons\mega_shok.gif" />
+    <Content Include="Content\Emoticons\moil.gif" />
+    <Content Include="Content\Emoticons\mosking.gif" />
+    <Content Include="Content\Emoticons\music.gif" />
+    <Content Include="Content\Emoticons\nea.gif" />
+    <Content Include="Content\Emoticons\negative.gif" />
+    <Content Include="Content\Emoticons\new_russian.gif" />
+    <Content Include="Content\Emoticons\ok.gif" />
+    <Content Include="Content\Emoticons\on_the_quiet.gif" />
+    <Content Include="Content\Emoticons\padonak.gif" />
+    <Content Include="Content\Emoticons\paint.gif" />
+    <Content Include="Content\Emoticons\pardon.gif" />
+    <Content Include="Content\Emoticons\parting.gif" />
+    <Content Include="Content\Emoticons\party.gif" />
+    <Content Include="Content\Emoticons\pilot.gif" />
+    <Content Include="Content\Emoticons\pleasantry.gif" />
+    <Content Include="Content\Emoticons\popcorm.gif" />
+    <Content Include="Content\Emoticons\prankster.gif" />
+    <Content Include="Content\Emoticons\preved.gif" />
+    <Content Include="Content\Emoticons\punish.gif" />
+    <Content Include="Content\Emoticons\rofl.gif" />
+    <Content Include="Content\Emoticons\rtfm.gif" />
+    <Content Include="Content\Emoticons\russian_ru.gif" />
+    <Content Include="Content\Emoticons\sad.gif" />
+    <Content Include="Content\Emoticons\sarcastic.gif" />
+    <Content Include="Content\Emoticons\sarcastic_blum.gif" />
+    <Content Include="Content\Emoticons\sarcastic_hand.gif" />
+    <Content Include="Content\Emoticons\scare.gif" />
+    <Content Include="Content\Emoticons\scaut.gif" />
+    <Content Include="Content\Emoticons\scratch_one-s_head.gif" />
+    <Content Include="Content\Emoticons\search.gif" />
+    <Content Include="Content\Emoticons\secret.gif" />
+    <Content Include="Content\Emoticons\shok.gif" />
+    <Content Include="Content\Emoticons\shout.gif" />
+    <Content Include="Content\Emoticons\smile.gif" />
+    <Content Include="Content\Emoticons\smoke.gif" />
+    <Content Include="Content\Emoticons\soldier.gif" />
+    <Content Include="Content\Emoticons\soldier_girl.gif" />
+    <Content Include="Content\Emoticons\sorry.gif" />
+    <Content Include="Content\Emoticons\spiteful.gif" />
+    <Content Include="Content\Emoticons\spruce_up.gif" />
+    <Content Include="Content\Emoticons\superstition.gif" />
+    <Content Include="Content\Emoticons\swoon.gif" />
+    <Content Include="Content\Emoticons\tease.gif" />
+    <Content Include="Content\Emoticons\tender.gif" />
+    <Content Include="Content\Emoticons\thank_you.gif" />
+    <Content Include="Content\Emoticons\this.gif" />
+    <Content Include="Content\Emoticons\to_become_senile.gif" />
+    <Content Include="Content\Emoticons\to_take_umbrage.gif" />
+    <Content Include="Content\Emoticons\training.gif" />
+    <Content Include="Content\Emoticons\treaten.gif" />
+    <Content Include="Content\Emoticons\umnik.gif" />
+    <Content Include="Content\Emoticons\unknw.gif" />
+    <Content Include="Content\Emoticons\vampire.gif" />
+    <Content Include="Content\Emoticons\vava.gif" />
+    <Content Include="Content\Emoticons\victory.gif" />
+    <Content Include="Content\Emoticons\wacko.gif" />
+    <Content Include="Content\Emoticons\whistle.gif" />
+    <Content Include="Content\Emoticons\wink.gif" />
+    <Content Include="Content\Emoticons\wizard.gif" />
+    <Content Include="Content\Emoticons\yahoo.gif" />
+    <Content Include="Content\Emoticons\yes.gif" />
+    <Content Include="Content\Emoticons\yu.gif" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\Main.js" />
+    <Content Include="Scripts\UserProfile.js" />
+    <Content Include="Views\Home\ChatRoom.cshtml" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\ListOfChatRooms.cshtml" />
+    <Content Include="Views\Home\InviteUsersToChatRoom.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Home\ListOfUsers.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\UserProfilePage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\EditMessageText.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52124</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57179/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'd:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('d:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'd:\Documents\Job\6_Clarity-AG\WebChat\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

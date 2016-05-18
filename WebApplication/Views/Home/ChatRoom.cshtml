@@ -1,0 +1,355 @@
+﻿@model IEnumerable<WebApplication3.Models.Message>
+@using WebApplication3.Helpers
+@{
+    Layout = null;
+}
+<script>
+    var windw = window;
+    windw.addEventListener("load", scrollToDown, false);
+    windw.addEventListener("load", replaceTextWithImg, false);
+
+    function scrollToDown() {
+        var objDiv = document.getElementById("Chat");
+        var scrollHeight = Math.max(
+          objDiv.scrollHeight, objDiv.offsetHeight, objDiv.clientHeight
+        );
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+    function replaceTextWithImg() {
+        var objMsgTxtClass = document.getElementsByClassName("MsgDataTextClass");
+        var n;
+        for (n = 0; n < objMsgTxtClass.length; n++) {
+            replaceWithImg(objMsgTxtClass[n]);
+        }
+    }
+    function replaceWithImg(objMsgTxt) {
+        var txt = [];
+        var img = [];
+        txt[0] = '[acute]';
+        img[0] = '<img src="/Content/Emoticons/acute.gif" />';
+        txt[1] = '[aggressive]';
+        img[1] = '<img src="/Content/Emoticons/aggressive.gif" />';
+        txt[2] = '[air_kiss]';
+        img[2] = '<img src="/Content/Emoticons/air_kiss.gif" />';
+        txt[3] = '[angel]';
+        img[3] = '<img src="/Content/Emoticons/angel.gif" />';
+        txt[4] = '[bad]';
+        img[4] = '<img src="/Content/Emoticons/bad.gif" />';
+        txt[5] = '[bb]';
+        img[5] = '<img src="/Content/Emoticons/bb.gif" />';
+        txt[6] = '[beach]';
+        img[6] = '<img src="/Content/Emoticons/beach.gif" />';
+        txt[7] = '[beee]';
+        img[7] = '<img src="/Content/Emoticons/beee.gif" />';
+        txt[8] = '[big_boss]';
+        img[8] = '<img src="/Content/Emoticons/big_boss.gif" />';
+        txt[9] = '[blum]';
+        img[9] = '<img src="/Content/Emoticons/blum.gif" />';
+        txt[10] = '[blush]';
+        img[10] = '<img src="/Content/Emoticons/blush.gif" />';
+        txt[11] = '[boast]';
+        img[11] = '<img src="/Content/Emoticons/boast.gif" />';
+        txt[12] = '[bomb]';
+        img[12] = '<img src="/Content/Emoticons/bomb.gif" />';
+        txt[13] = '[boredom]';
+        img[13] = '<img src="/Content/Emoticons/boredom.gif" />';
+        txt[14] = '[bye]';
+        img[14] = '<img src="/Content/Emoticons/bye.gif" />';
+        txt[15] = '[clapping]';
+        img[15] = '<img src="/Content/Emoticons/clapping.gif" />';
+        txt[16] = '[cray]';
+        img[16] = '<img src="/Content/Emoticons/cray.gif" />';
+        txt[17] = '[crazy]';
+        img[17] = '<img src="/Content/Emoticons/crazy.gif" />';
+        txt[18] = '[curtsey]';
+        img[18] = '<img src="/Content/Emoticons/curtsey.gif" />';
+        txt[19] = '[dance]';
+        img[19] = '<img src="/Content/Emoticons/dance.gif" />';
+        txt[20] = '[dash]';
+        img[20] = '<img src="/Content/Emoticons/dash.gif" />';
+        txt[21] = '[declare]';
+        img[21] = '<img src="/Content/Emoticons/declare.gif" />';
+        txt[22] = '[diablo]';
+        img[22] = '<img src="/Content/Emoticons/diablo.gif" />';
+        txt[23] = '[dirol]';
+        img[23] = '<img src="/Content/Emoticons/dirol.gif" />';
+        txt[24] = '[don-t_mention]';
+        img[24] = '<img src="/Content/Emoticons/don-t_mention.gif" />';
+        txt[25] = '[download]';
+        img[25] = '<img src="/Content/Emoticons/download.gif" />';
+        txt[26] = '[drinks]';
+        img[26] = '<img src="/Content/Emoticons/drinks.gif" />';
+        txt[27] = '[english_en]';
+        img[27] = '<img src="/Content/Emoticons/english_en.gif" />';
+        txt[28] = '[first_move]';
+        img[28] = '<img src="/Content/Emoticons/first_move.gif" />';
+        txt[29] = '[flirt]';
+        img[29] = '<img src="/Content/Emoticons/flirt.gif" />';
+        txt[30] = '[focus]';
+        img[30] = '<img src="/Content/Emoticons/focus.gif" />';
+        txt[31] = '[fool]';
+        img[31] = '<img src="/Content/Emoticons/fool.gif" />';
+        txt[32] = '[friends]';
+        img[32] = '<img src="/Content/Emoticons/friends.gif" />';
+        txt[33] = '[gamer2]';
+        img[33] = '<img src="/Content/Emoticons/gamer2.gif" />';
+        txt[34] = '[gamer4]';
+        img[34] = '<img src="/Content/Emoticons/gamer4.gif" />';
+        txt[35] = '[girl_blum]';
+        img[35] = '<img src="/Content/Emoticons/girl_blum.gif" />';
+        txt[36] = '[girl_cray]';
+        img[36] = '<img src="/Content/Emoticons/girl_cray.gif" />';
+        txt[37] = '[girl_crazy]';
+        img[37] = '<img src="/Content/Emoticons/girl_crazy.gif" />';
+        txt[38] = '[girl_dance]';
+        img[38] = '<img src="/Content/Emoticons/girl_dance.gif" />';
+        txt[39] = '[girl_devil]';
+        img[39] = '<img src="/Content/Emoticons/girl_devil.gif" />';
+        txt[40] = '[girl_drink]';
+        img[40] = '<img src="/Content/Emoticons/girl_drink.gif" />';
+        txt[41] = '[girl_drink1]';
+        img[41] = '<img src="/Content/Emoticons/girl_drink1.gif" />';
+        txt[42] = '[girl_haha]';
+        img[42] = '<img src="/Content/Emoticons/girl_haha.gif" />';
+        txt[43] = '[girl_hide]';
+        img[43] = '<img src="/Content/Emoticons/girl_hide.gif" />';
+        txt[44] = '[girl_hospital]';
+        img[44] = '<img src="/Content/Emoticons/girl_hospital.gif" />';
+        txt[45] = '[girl_impossible]';
+        img[45] = '<img src="/Content/Emoticons/girl_impossible.gif" />';
+        txt[46] = '[girl_in_love]';
+        img[46] = '<img src="/Content/Emoticons/girl_in_love.gif" />';
+        txt[47] = '[girl_mad]';
+        img[47] = '<img src="/Content/Emoticons/girl_mad.gif" />';
+        txt[48] = '[girl_pinkglassesf]';
+        img[48] = '<img src="/Content/Emoticons/girl_pinkglassesf.gif" />';
+        txt[49] = '[girl_sad]';
+        img[49] = '<img src="/Content/Emoticons/girl_sad.gif" />';
+        txt[50] = '[girl_sigh]';
+        img[50] = '<img src="/Content/Emoticons/girl_sigh.gif" />';
+        txt[51] = '[girl_smile]';
+        img[51] = '<img src="/Content/Emoticons/girl_smile.gif" />';
+        txt[52] = '[girl_wacko]';
+        img[52] = '<img src="/Content/Emoticons/girl_wacko.gif" />';
+        txt[53] = '[girl_wink]';
+        img[53] = '<img src="/Content/Emoticons/girl_wink.gif" />';
+        txt[54] = '[girl_witch]';
+        img[54] = '<img src="/Content/Emoticons/girl_witch.gif" />';
+        txt[55] = '[give_heart]';
+        img[55] = '<img src="/Content/Emoticons/give_heart.gif" />';
+        txt[56] = '[give_rose]';
+        img[56] = '<img src="/Content/Emoticons/give_rose.gif" />';
+        txt[57] = '[good]';
+        img[57] = '<img src="/Content/Emoticons/good.gif" />';
+        txt[58] = '[heart]';
+        img[58] = '<img src="/Content/Emoticons/heart.gif" />';
+        txt[59] = '[heat]';
+        img[59] = '<img src="/Content/Emoticons/heat.gif" />';
+        txt[60] = '[help]';
+        img[60] = '<img src="/Content/Emoticons/help.gif" />';
+        txt[61] = '[hi]';
+        img[61] = '<img src="/Content/Emoticons/hi.gif" />';
+        txt[62] = '[hunter]';
+        img[62] = '<img src="/Content/Emoticons/hunter.gif" />';
+        txt[63] = '[hysteric]';
+        img[63] = '<img src="/Content/Emoticons/hysteric.gif" />';
+        txt[64] = '[i-m_so_happy]';
+        img[64] = '<img src="/Content/Emoticons/i-m_so_happy.gif" />';
+        txt[65] = '[ireful]';
+        img[65] = '<img src="/Content/Emoticons/ireful.gif" />';
+        txt[66] = '[king]';
+        img[66] = '<img src="/Content/Emoticons/king.gif" />';
+        txt[67] = '[kiss]';
+        img[67] = '<img src="/Content/Emoticons/kiss.gif" />';
+        txt[68] = '[laugh]';
+        img[68] = '<img src="/Content/Emoticons/laugh.gif" />';
+        txt[69] = '[lazy]';
+        img[69] = '<img src="/Content/Emoticons/lazy.gif" />';
+        txt[70] = '[lol]';
+        img[70] = '<img src="/Content/Emoticons/lol.gif" />';
+        txt[71] = '[mail]';
+        img[71] = '<img src="/Content/Emoticons/mail.gif" />';
+        txt[72] = '[mamba]';
+        img[72] = '<img src="/Content/Emoticons/mamba.gif" />';
+        txt[73] = '[man_in_love]';
+        img[73] = '<img src="/Content/Emoticons/man_in_love.gif" />';
+        txt[74] = '[mda]';
+        img[74] = '<img src="/Content/Emoticons/mda.gif" />';
+        txt[75] = '[mega_shok]';
+        img[75] = '<img src="/Content/Emoticons/mega_shok.gif" />';
+        txt[76] = '[moil]';
+        img[76] = '<img src="/Content/Emoticons/moil.gif" />';
+        txt[77] = '[mosking]';
+        img[77] = '<img src="/Content/Emoticons/mosking.gif" />';
+        txt[78] = '[music]';
+        img[78] = '<img src="/Content/Emoticons/music.gif" />';
+        txt[79] = '[nea]';
+        img[79] = '<img src="/Content/Emoticons/nea.gif" />';
+        txt[80] = '[negative]';
+        img[80] = '<img src="/Content/Emoticons/negative.gif" />';
+        txt[81] = '[new_russian]';
+        img[81] = '<img src="/Content/Emoticons/new_russian.gif" />';
+        txt[82] = '[ok]';
+        img[82] = '<img src="/Content/Emoticons/ok.gif" />';
+        txt[83] = '[on_the_quiet]';
+        img[83] = '<img src="/Content/Emoticons/on_the_quiet.gif" />';
+        txt[84] = '[padonak]';
+        img[84] = '<img src="/Content/Emoticons/padonak.gif" />';
+        txt[85] = '[paint]';
+        img[85] = '<img src="/Content/Emoticons/paint.gif" />';
+        txt[86] = '[pardon]';
+        img[86] = '<img src="/Content/Emoticons/pardon.gif" />';
+        txt[87] = '[parting]';
+        img[87] = '<img src="/Content/Emoticons/parting.gif" />';
+        txt[88] = '[party]';
+        img[88] = '<img src="/Content/Emoticons/party.gif" />';
+        txt[89] = '[pilot]';
+        img[89] = '<img src="/Content/Emoticons/pilot.gif" />';
+        txt[90] = '[pleasantry]';
+        img[90] = '<img src="/Content/Emoticons/pleasantry.gif" />';
+        txt[91] = '[popcorm]';
+        img[91] = '<img src="/Content/Emoticons/popcorm.gif" />';
+        txt[92] = '[prankster]';
+        img[92] = '<img src="/Content/Emoticons/prankster.gif" />';
+        txt[93] = '[preved]';
+        img[93] = '<img src="/Content/Emoticons/preved.gif" />';
+        txt[94] = '[punish]';
+        img[94] = '<img src="/Content/Emoticons/punish.gif" />';
+        txt[95] = '[rofl]';
+        img[95] = '<img src="/Content/Emoticons/rofl.gif" />';
+        txt[96] = '[rtfm]';
+        img[96] = '<img src="/Content/Emoticons/rtfm.gif" />';
+        txt[97] = '[russian_ru]';
+        img[97] = '<img src="/Content/Emoticons/russian_ru.gif" />';
+        txt[98] = '[sad]';
+        img[98] = '<img src="/Content/Emoticons/sad.gif" />';
+        txt[99] = '[sarcastic]';
+        img[99] = '<img src="/Content/Emoticons/sarcastic.gif" />';
+        txt[100] = '[sarcastic_blum]';
+        img[100] = '<img src="/Content/Emoticons/sarcastic_blum.gif" />';
+        txt[101] = '[sarcastic_hand]';
+        img[101] = '<img src="/Content/Emoticons/sarcastic_hand.gif" />';
+        txt[102] = '[scare]';
+        img[102] = '<img src="/Content/Emoticons/scare.gif" />';
+        txt[103] = '[scaut]';
+        img[103] = '<img src="/Content/Emoticons/scaut.gif" />';
+        txt[104] = '[scratch_one-s_head]';
+        img[104] = '<img src="/Content/Emoticons/scratch_one-s_head.gif" />';
+        txt[105] = '[search]';
+        img[105] = '<img src="/Content/Emoticons/search.gif" />';
+        txt[106] = '[secret]';
+        img[106] = '<img src="/Content/Emoticons/secret.gif" />';
+        txt[107] = '[shok]';
+        img[107] = '<img src="/Content/Emoticons/shok.gif" />';
+        txt[108] = '[shout]';
+        img[108] = '<img src="/Content/Emoticons/shout.gif" />';
+        txt[109] = '[smile]';
+        img[109] = '<img src="/Content/Emoticons/smile.gif" />';
+        txt[110] = '[smoke]';
+        img[110] = '<img src="/Content/Emoticons/smoke.gif" />';
+        txt[111] = '[soldier]';
+        img[111] = '<img src="/Content/Emoticons/soldier.gif" />';
+        txt[112] = '[soldier_girl]';
+        img[112] = '<img src="/Content/Emoticons/soldier_girl.gif" />';
+        txt[113] = '[sorry]';
+        img[113] = '<img src="/Content/Emoticons/sorry.gif" />';
+        txt[114] = '[spiteful]';
+        img[114] = '<img src="/Content/Emoticons/spiteful.gif" />';
+        txt[115] = '[spruce_up]';
+        img[115] = '<img src="/Content/Emoticons/spruce_up.gif" />';
+        txt[116] = '[superstition]';
+        img[116] = '<img src="/Content/Emoticons/superstition.gif" />';
+        txt[117] = '[swoon]';
+        img[117] = '<img src="/Content/Emoticons/swoon.gif" />';
+        txt[118] = '[tease]';
+        img[118] = '<img src="/Content/Emoticons/tease.gif" />';
+        txt[119] = '[tender]';
+        img[119] = '<img src="/Content/Emoticons/tender.gif" />';
+        txt[120] = '[thank_you]';
+        img[120] = '<img src="/Content/Emoticons/thank_you.gif" />';
+        txt[121] = '[this]';
+        img[121] = '<img src="/Content/Emoticons/this.gif" />';
+        txt[122] = '[to_become_senile]';
+        img[122] = '<img src="/Content/Emoticons/to_become_senile.gif" />';
+        txt[123] = '[to_take_umbrage]';
+        img[123] = '<img src="/Content/Emoticons/to_take_umbrage.gif" />';
+        txt[124] = '[training]';
+        img[124] = '<img src="/Content/Emoticons/training.gif" />';
+        txt[125] = '[treaten]';
+        img[125] = '<img src="/Content/Emoticons/treaten.gif" />';
+        txt[126] = '[umnik]';
+        img[126] = '<img src="/Content/Emoticons/umnik.gif" />';
+        txt[127] = '[unknw]';
+        img[127] = '<img src="/Content/Emoticons/unknw.gif" />';
+        txt[128] = '[vampire]';
+        img[128] = '<img src="/Content/Emoticons/vampire.gif" />';
+        txt[129] = '[vava]';
+        img[129] = '<img src="/Content/Emoticons/vava.gif" />';
+        txt[130] = '[victory]';
+        img[130] = '<img src="/Content/Emoticons/victory.gif" />';
+        txt[131] = '[wacko]';
+        img[131] = '<img src="/Content/Emoticons/wacko.gif" />';
+        txt[132] = '[whistle]';
+        img[132] = '<img src="/Content/Emoticons/whistle.gif" />';
+        txt[133] = '[wink]';
+        img[133] = '<img src="/Content/Emoticons/wink.gif" />';
+        txt[134] = '[wizard]';
+        img[134] = '<img src="/Content/Emoticons/wizard.gif" />';
+        txt[135] = '[yahoo]';
+        img[135] = '<img src="/Content/Emoticons/yahoo.gif" />';
+        txt[136] = '[yes]';
+        img[136] = '<img src="/Content/Emoticons/yes.gif" />';
+        txt[137] = '[yu]';
+        img[137] = '<img src="/Content/Emoticons/yu.gif" />';
+
+
+        var innTxt = objMsgTxt.innerHTML;
+        for (var v = 0; v < txt.length; v++) {
+            if (innTxt.includes(txt[v])) {
+                innTxt = innTxt.split(txt[v]).join(img[v]);
+            }
+        }
+        objMsgTxt.innerHTML = innTxt;
+    }
+</script>
+
+<div>
+    @foreach (WebApplication3.Models.Message msg in @ViewBag.Messages)
+    {
+        <div id="MsgOptions">
+            @if (msg.SenderName == User.Identity.Name)
+            {
+                <div id="MsgDataDate">@TimeZoneInfo.ConvertTimeFromUtc(msg.Date, ViewBag.UserTimeZone):</div>
+                <div id="QuoteMsg" onclick="GetMessageIdToQuote('@msg.SenderName','@msg.Text')"><a href="#" class="glyphicon glyphicon-chevron-down"></a></div>
+                <div id="EditMsg"><a href="" onclick="ShowModalDialogToEditMessage('@msg.Id')" id="editMessage" data-msgid="@msg.Id" class="glyphicon glyphicon-edit"></a></div>
+                <div id="DeleteMsg">@Ajax.ActionLink(" ", "DeleteMessageFromDatabase", new { MsgId = @msg.Id }, new AjaxOptions { }, new { @class = "glyphicon glyphicon-remove" })</div>
+            }
+            else
+            {
+                <div id="MsgDataDate">@TimeZoneInfo.ConvertTimeFromUtc(msg.Date, ViewBag.UserTimeZone):</div>
+                <div id="QuoteMsg" onclick="GetMessageIdToQuote('@msg.SenderName','@msg.Text')"><a href="#" class="glyphicon glyphicon-chevron-down"></a></div>
+            }
+        </div>
+
+        if ((@ViewBag.ActivityDates != null) && ((@msg.Date > @ViewBag.ActivityDates.LastExitChatRoomDate) && (@msg.Date < @ViewBag.ActivityDates.LastEnterChatRoomDate)))
+        {
+            <div id="MsgDataUnread">
+                <div id="MsgDataSenderName"><b><font color="@msg.TextColor">@msg.SenderName:</font></b></div>
+                <div id="MsgDataText" class="MsgDataTextClass">@Html.ConvertElementsToHTML(@msg.Text)</div>
+            </div>
+
+        }
+        else
+        {
+            <div id="MsgData">
+                <div id="MsgDataSenderName"><b><font color="@msg.TextColor">@msg.SenderName:</font></b></div>
+                <div id="MsgDataText" class="MsgDataTextClass">@Html.ConvertElementsToHTML(@msg.Text)</div>
+            </div>
+
+        }
+    }
+</div>
+<div id='editMsgModal' class='modal fade' role="dialog">
+    <div id='editMsgContainer'>
+    </div>
+</div>

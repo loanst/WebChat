@@ -1,0 +1,66 @@
+﻿@using WebApplication3.Models;
+
+@if (Request.IsAuthenticated)
+{
+    @*<div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>*@
+
+    @*<div class="btn-group">
+            <button class="btn dropdown-toggle btn-sm" data-toggle="dropdown">Действие <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Действие</a></li>
+                <li><a href="#">Другое действие</a></li>
+                <li><a href="#">Еще и еще</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Отделенный пункт</a></li>
+            </ul>
+        </div>*@
+
+    //переробити на загрузку даного блоку коду за допомогою джаваскріпт.
+    <div id="ChatRoomsDropdownMenu">
+        @{Html.RenderPartial("ListOfChatRoomsForLayoutMenu");}
+    </div>
+    <div>
+        <div class="nav navbar-nav navbar-text">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<h4>Example page header <small>Subtext for header</small></h4>*@
+                        Text
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Hello " + User.Identity.Name + "!", "UserProfilePage", "Home", routeValues: null, htmlAttributes: new { target = "_blank" })
+                    </li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+                }
+            }
+            else
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=@Url.Action("Register", "Account", null, null)><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    <li><a href=@Url.Action("Login", "Account", null, null)><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+                </ul>
+            }

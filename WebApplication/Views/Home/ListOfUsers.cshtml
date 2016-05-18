@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication3.Models.UserProfile>
+@{
+    Layout = null;
+}
+<p><b>Registered users in chat room:</b></p>
+<p>Online:</p>
+<table>
+    @foreach (WebApplication3.Models.UserProfile u in @ViewBag.Users)
+    {
+        if ((u.IsOnline == true)&&(u.UserName != User.Identity.Name))
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Main","Home", new { Receiver = @u.Guid })">
+                        @u.UserName
+                        @if ((@ViewBag.IsANewMessages != null) && ((@ViewBag.IsANewMessages.ContainsKey(@u.Guid)) && (@ViewBag.IsANewMessages[@u.Guid].ContainsKey(@ViewBag.CurrentUserGuid))))
+                        {
+                            <span class="glyphicon glyphicon-comment"></span>
+                        }
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<p>Offline:</p>
+<table>
+    @foreach (WebApplication3.Models.UserProfile u in @ViewBag.Users)
+    {
+        if ((u.IsOnline == false) && (u.UserName != User.Identity.Name))
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Main","Home", new { Receiver = @u.Guid })">
+                        @u.UserName
+                        @if ((@ViewBag.IsANewMessages != null) && ((@ViewBag.IsANewMessages.ContainsKey(@u.Guid)) && (@ViewBag.IsANewMessages[@u.Guid].ContainsKey(@ViewBag.CurrentUserGuid))))
+                        {
+                            <span class="glyphicon glyphicon-comment"></span>
+                        }
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>

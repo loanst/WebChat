@@ -1,0 +1,142 @@
+﻿@using WebApplication3.Models
+@{
+    ViewBag.Title = "Profile preferences";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <p>Here you can change your user-profile preferences.</p>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Timezone change</a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    @Html.DropDownList("TimeZones", null, new { @id = "TimeZoneId" })
+                    <button id="btnChangeTimeZone" href="#bottom">Change TimeZone</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Login color change</a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    @Html.DropDownList("ColorType", null, new { @id = "ColorTypeId" })
+                    <button id="btnChangeColorOfLogin" href="#bottom">Change color</button>
+                    <div id="ColoredUserName">@User.Identity.Name</div>
+                    <div id="ColoredUserNameTemplate" style="display:none;">@User.Identity.Name</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Related chat rooms preferences</a>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p><a href="#myModal" data-toggle="modal" data-target="#ModalDialogToCreateANewChatRoom">Create a new chat room</a></p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Chat room title</th>
+                                <th>Invite</th>
+                                <th>Leave</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (ChatRoom chtr in @ViewBag.ChatRooms)
+                            {
+                                if (chtr.Title != "GlobalChatRoom")
+                                {
+                                    if (chtr.Creator == User.Identity.Name)
+                                    {
+                                        <tr id="UserRelatedConferentionChatRooms">
+                                            <td>
+                                                @chtr.Title
+                                            </td>
+                                            <td>
+                                                <a href="" id="inviteUsers" onclick="ShowModalDialogToInviteUsersToChatRoom('@chtr.Guid')">Invite users</a>
+                                            </td>
+                                            <td>
+                                                @foreach (UserProfile up in chtr.Users)
+                                                {
+                                                    if (up.UserName == User.Identity.Name)
+                                                    {
+                                                        @Html.ActionLink("Leave chat room", "LeaveChatRoom", new { ChatRoomGuid = @chtr.Guid })
+                                                    }
+                                                }
+
+                                            </td>
+
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        foreach (UserProfile up in chtr.Users)
+                                        {
+                                            if (up.UserName == User.Identity.Name)
+                                            {
+                                                <tr id="UserRelatedConferentionChatRooms">
+                                                    <td>
+                                                        @chtr.Title
+                                                    </td>
+                                                    <td>
+                                                        @Html.ActionLink("Leave chat room", "LeaveChatRoom", new { ChatRoomGuid = @chtr.Guid })
+                                                    </td>
+                                                    <td></td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='inviteUsersModal' class='modal fade' role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div id='inviteUsersContainer'>
+        </div>
+    </div>
+</div>
+
+<div id="ModalDialogToCreateANewChatRoom" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New chat room</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CreateConferentionChatRoom", "Home", FormMethod.Post))
+                {
+                    <p>Please, enter a <b>title</b> of the new chat conference: </p>
+                    @Html.TextBox("Title", "")
+                    @Html.Hidden("Creator", @User.Identity.Name)
+                    <p></p>
+                    <p>Please, select the <b>participants</b>:</p>
+                    @Html.ListBox("SelectedUsers", new MultiSelectList(@ViewBag.Users, "UserId", "UserName"), new { style = "width: 100%" })
+                    <p></p>
+                    <p><input type="submit" class="btn btn-success btn-md" value="Create" /></p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/scripts/UserProfile.js")

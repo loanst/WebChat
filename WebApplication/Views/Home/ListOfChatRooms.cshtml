@@ -1,0 +1,28 @@
+﻿@using WebApplication3.Models
+@model ChatRoom
+@{
+    Layout = null;
+}
+<p><b>Related chat rooms:</b></p>
+<table>
+    @foreach (WebApplication3.Models.ChatRoom chtr in @ViewBag.ChatRooms)
+    {
+        foreach (UserProfile up in chtr.Users)
+        {
+            if (up.UserName == User.Identity.Name)
+            {
+                <tr id="UserRelatedConferentionChatRooms">
+                    <td>
+                        <a href="@Url.Action("Main","Home", new { Receiver = @chtr.Guid })">
+                            @chtr.Title
+                            @if ((@ViewBag.IsANewMessages.ContainsKey(@chtr.Guid)) && (@ViewBag.IsANewMessages[@chtr.Guid].ContainsKey(up.Guid)))
+                            {
+                                <span class="glyphicon glyphicon-comment"></span>
+                            }
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>

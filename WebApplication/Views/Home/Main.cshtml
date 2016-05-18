@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = @ViewBag.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    @Scripts.Render("~/scripts/Main.js")
+}
+
+<div class="row">
+    <div id="Chat">
+        @Html.Partial("ChatRoom")
+    </div>
+    <div id="ListOfUsers">
+        @Html.Partial("ListOfUsers")
+    </div>
+    <div id="ListOfChatRooms">
+        @Html.Partial("ListOfChatRooms")
+    </div>
+</div>
+
+<div class="row">
+    <div id="AreaToSendMessages">
+        <label>Active users:</label><label id="InfoAboutActiveUsers"></label>
+        <input type="hidden" value="@ViewBag.SenderGuid" name="Sender" id="Sender" />
+        <input type="hidden" value="@ViewBag.ReceiverGuid" name="Receiver" id="Receiver" />
+        <p id="UserGreeting"><b>Hello <font color="@ViewBag.LoginColor">@User.Identity.Name</font>! Please, input your message:</b></p>
+        <textarea name="Text" id="Text" rows="5" maxlength="500"></textarea>
+        <div class="AddEmotionIcons">
+            <img src="/Content/Emoticons/smile.gif" />
+            <div class="EmotionIconsCollection">
+                Please, choose emotion: <br>
+                <img class="EmotionIcon" id="gifAcute" src="/Content/Emoticons/acute.gif" />
+                <img class="EmotionIcon" id="gifAggressive" src="/Content/Emoticons/aggressive.gif" />
+                <img class="EmotionIcon" id="gifAir_kiss" src="/Content/Emoticons/air_kiss.gif" />
+                <img class="EmotionIcon" id="gifAngel" src="/Content/Emoticons/angel.gif" />
+                <img class="EmotionIcon" id="gifBad" src="/Content/Emoticons/bad.gif" />
+                <img class="EmotionIcon" id="gifBb" src="/Content/Emoticons/bb.gif" />
+                <img class="EmotionIcon" id="gifBeach" src="/Content/Emoticons/beach.gif" />
+                <img class="EmotionIcon" id="gifBeee" src="/Content/Emoticons/beee.gif" />
+                <img class="EmotionIcon" id="gifBig_boss" src="/Content/Emoticons/big_boss.gif" />
+                <img class="EmotionIcon" id="gifBlum" src="/Content/Emoticons/blum.gif" />
+                <img class="EmotionIcon" id="gifBlush" src="/Content/Emoticons/blush.gif" />
+                <img class="EmotionIcon" id="gifBoast" src="/Content/Emoticons/boast.gif" />
+                <img class="EmotionIcon" id="gifBomb" src="/Content/Emoticons/bomb.gif" />
+                <img class="EmotionIcon" id="gifBoredom" src="/Content/Emoticons/boredom.gif" />
+                <img class="EmotionIcon" id="gifBye" src="/Content/Emoticons/bye.gif" />
+                <img class="EmotionIcon" id="gifClapping" src="/Content/Emoticons/clapping.gif" />
+                <img class="EmotionIcon" id="gifCray" src="/Content/Emoticons/cray.gif" />
+                <img class="EmotionIcon" id="gifCrazy" src="/Content/Emoticons/crazy.gif" />
+                <img class="EmotionIcon" id="gifCurtsey" src="/Content/Emoticons/curtsey.gif" />
+                <img class="EmotionIcon" id="gifDance" src="/Content/Emoticons/dance.gif" />
+                <img class="EmotionIcon" id="gifDash" src="/Content/Emoticons/dash.gif" />
+                <img class="EmotionIcon" id="gifDeclare" src="/Content/Emoticons/declare.gif" />
+                <img class="EmotionIcon" id="gifDiablo" src="/Content/Emoticons/diablo.gif" />
+                <img class="EmotionIcon" id="gifDirol" src="/Content/Emoticons/dirol.gif" />
+                <img class="EmotionIcon" id="gifDon-t_mention" src="/Content/Emoticons/don-t_mention.gif" />
+                <img class="EmotionIcon" id="gifDownload" src="/Content/Emoticons/download.gif" />
+                <img class="EmotionIcon" id="gifDrinks" src="/Content/Emoticons/drinks.gif" />
+                <img class="EmotionIcon" id="gifEnglish_en" src="/Content/Emoticons/english_en.gif" />
+                <img class="EmotionIcon" id="gifFirst_move" src="/Content/Emoticons/first_move.gif" />
+                <img class="EmotionIcon" id="gifFlirt" src="/Content/Emoticons/flirt.gif" />
+                <img class="EmotionIcon" id="gifFocus" src="/Content/Emoticons/focus.gif" />
+                <img class="EmotionIcon" id="gifFool" src="/Content/Emoticons/fool.gif" />
+                <img class="EmotionIcon" id="gifFriends" src="/Content/Emoticons/friends.gif" />
+                <img class="EmotionIcon" id="gifGamer2" src="/Content/Emoticons/gamer2.gif" />
+                <img class="EmotionIcon" id="gifGamer4" src="/Content/Emoticons/gamer4.gif" />
+                <img class="EmotionIcon" id="gifGirl_blum" src="/Content/Emoticons/girl_blum.gif" />
+                <img class="EmotionIcon" id="gifGirl_cray" src="/Content/Emoticons/girl_cray.gif" />
+                <img class="EmotionIcon" id="gifGirl_crazy" src="/Content/Emoticons/girl_crazy.gif" />
+                <img class="EmotionIcon" id="gifGirl_dance" src="/Content/Emoticons/girl_dance.gif" />
+                <img class="EmotionIcon" id="gifGirl_devil" src="/Content/Emoticons/girl_devil.gif" />
+                <img class="EmotionIcon" id="gifGirl_drink" src="/Content/Emoticons/girl_drink.gif" />
+                <img class="EmotionIcon" id="gifGirl_drink1" src="/Content/Emoticons/girl_drink1.gif" />
+                <img class="EmotionIcon" id="gifGirl_haha" src="/Content/Emoticons/girl_haha.gif" />
+                <img class="EmotionIcon" id="gifGirl_hide" src="/Content/Emoticons/girl_hide.gif" />
+                <img class="EmotionIcon" id="gifGirl_hospital" src="/Content/Emoticons/girl_hospital.gif" />
+                <img class="EmotionIcon" id="gifGirl_impossible" src="/Content/Emoticons/girl_impossible.gif" />
+                <img class="EmotionIcon" id="gifGirl_in_love" src="/Content/Emoticons/girl_in_love.gif" />
+                <img class="EmotionIcon" id="gifGirl_mad" src="/Content/Emoticons/girl_mad.gif" />
+                <img class="EmotionIcon" id="gifGirl_pinkglassesf" src="/Content/Emoticons/girl_pinkglassesf.gif" />
+                <img class="EmotionIcon" id="gifGirl_sad" src="/Content/Emoticons/girl_sad.gif" />
+                <img class="EmotionIcon" id="gifGirl_sigh" src="/Content/Emoticons/girl_sigh.gif" />
+                <img class="EmotionIcon" id="gifGirl_smile" src="/Content/Emoticons/girl_smile.gif" />
+                <img class="EmotionIcon" id="gifGirl_wacko" src="/Content/Emoticons/girl_wacko.gif" />
+                <img class="EmotionIcon" id="gifGirl_wink" src="/Content/Emoticons/girl_wink.gif" />
+                <img class="EmotionIcon" id="gifGirl_witch" src="/Content/Emoticons/girl_witch.gif" />
+                <img class="EmotionIcon" id="gifGive_heart" src="/Content/Emoticons/give_heart.gif" />
+                <img class="EmotionIcon" id="gifGive_rose" src="/Content/Emoticons/give_rose.gif" />
+                <img class="EmotionIcon" id="gifGood" src="/Content/Emoticons/good.gif" />
+                <img class="EmotionIcon" id="gifHeart" src="/Content/Emoticons/heart.gif" />
+                <img class="EmotionIcon" id="gifHeat" src="/Content/Emoticons/heat.gif" />
+                <img class="EmotionIcon" id="gifHelp" src="/Content/Emoticons/help.gif" />
+                <img class="EmotionIcon" id="gifHi" src="/Content/Emoticons/hi.gif" />
+                <img class="EmotionIcon" id="gifHunter" src="/Content/Emoticons/hunter.gif" />
+                <img class="EmotionIcon" id="gifHysteric" src="/Content/Emoticons/hysteric.gif" />
+                <img class="EmotionIcon" id="gifI-m_so_happy" src="/Content/Emoticons/i-m_so_happy.gif" />
+                <img class="EmotionIcon" id="gifIreful" src="/Content/Emoticons/ireful.gif" />
+                <img class="EmotionIcon" id="gifKing" src="/Content/Emoticons/king.gif" />
+                <img class="EmotionIcon" id="gifKiss" src="/Content/Emoticons/kiss.gif" />
+                <img class="EmotionIcon" id="gifLaugh" src="/Content/Emoticons/laugh.gif" />
+                <img class="EmotionIcon" id="gifLazy" src="/Content/Emoticons/lazy.gif" />
+                <img class="EmotionIcon" id="gifLol" src="/Content/Emoticons/lol.gif" />
+                <img class="EmotionIcon" id="gifMail" src="/Content/Emoticons/mail.gif" />
+                <img class="EmotionIcon" id="gifMamba" src="/Content/Emoticons/mamba.gif" />
+                <img class="EmotionIcon" id="gifMan_in_love" src="/Content/Emoticons/man_in_love.gif" />
+                <img class="EmotionIcon" id="gifMda" src="/Content/Emoticons/mda.gif" />
+                <img class="EmotionIcon" id="gifMega_shok" src="/Content/Emoticons/mega_shok.gif" />
+                <img class="EmotionIcon" id="gifMoil" src="/Content/Emoticons/moil.gif" />
+                <img class="EmotionIcon" id="gifMosking" src="/Content/Emoticons/mosking.gif" />
+                <img class="EmotionIcon" id="gifMusic" src="/Content/Emoticons/music.gif" />
+                <img class="EmotionIcon" id="gifNea" src="/Content/Emoticons/nea.gif" />
+                <img class="EmotionIcon" id="gifNegative" src="/Content/Emoticons/negative.gif" />
+                <img class="EmotionIcon" id="gifNew_russian" src="/Content/Emoticons/new_russian.gif" />
+                <img class="EmotionIcon" id="gifOk" src="/Content/Emoticons/ok.gif" />
+                <img class="EmotionIcon" id="gifOn_the_quiet" src="/Content/Emoticons/on_the_quiet.gif" />
+                <img class="EmotionIcon" id="gifPadonak" src="/Content/Emoticons/padonak.gif" />
+                <img class="EmotionIcon" id="gifPaint" src="/Content/Emoticons/paint.gif" />
+                <img class="EmotionIcon" id="gifPardon" src="/Content/Emoticons/pardon.gif" />
+                <img class="EmotionIcon" id="gifParting" src="/Content/Emoticons/parting.gif" />
+                <img class="EmotionIcon" id="gifParty" src="/Content/Emoticons/party.gif" />
+                <img class="EmotionIcon" id="gifPilot" src="/Content/Emoticons/pilot.gif" />
+                <img class="EmotionIcon" id="gifPleasantry" src="/Content/Emoticons/pleasantry.gif" />
+                <img class="EmotionIcon" id="gifPopcorm" src="/Content/Emoticons/popcorm.gif" />
+                <img class="EmotionIcon" id="gifPrankster" src="/Content/Emoticons/prankster.gif" />
+                <img class="EmotionIcon" id="gifPreved" src="/Content/Emoticons/preved.gif" />
+                <img class="EmotionIcon" id="gifPunish" src="/Content/Emoticons/punish.gif" />
+                <img class="EmotionIcon" id="gifRofl" src="/Content/Emoticons/rofl.gif" />
+                <img class="EmotionIcon" id="gifRtfm" src="/Content/Emoticons/rtfm.gif" />
+                <img class="EmotionIcon" id="gifRussian_ru" src="/Content/Emoticons/russian_ru.gif" />
+                <img class="EmotionIcon" id="gifSad" src="/Content/Emoticons/sad.gif" />
+                <img class="EmotionIcon" id="gifSarcastic" src="/Content/Emoticons/sarcastic.gif" />
+                <img class="EmotionIcon" id="gifSarcastic_blum" src="/Content/Emoticons/sarcastic_blum.gif" />
+                <img class="EmotionIcon" id="gifSarcastic_hand" src="/Content/Emoticons/sarcastic_hand.gif" />
+                <img class="EmotionIcon" id="gifScare" src="/Content/Emoticons/scare.gif" />
+                <img class="EmotionIcon" id="gifScaut" src="/Content/Emoticons/scaut.gif" />
+                <img class="EmotionIcon" id="gifScratch_one-s_head" src="/Content/Emoticons/scratch_one-s_head.gif" />
+                <img class="EmotionIcon" id="gifSearch" src="/Content/Emoticons/search.gif" />
+                <img class="EmotionIcon" id="gifSecret" src="/Content/Emoticons/secret.gif" />
+                <img class="EmotionIcon" id="gifShok" src="/Content/Emoticons/shok.gif" />
+                <img class="EmotionIcon" id="gifShout" src="/Content/Emoticons/shout.gif" />
+                <img class="EmotionIcon" id="gifSmile" src="/Content/Emoticons/smile.gif" />
+                <img class="EmotionIcon" id="gifSmoke" src="/Content/Emoticons/smoke.gif" />
+                <img class="EmotionIcon" id="gifSoldier" src="/Content/Emoticons/soldier.gif" />
+                <img class="EmotionIcon" id="gifSoldier_girl" src="/Content/Emoticons/soldier_girl.gif" />
+                <img class="EmotionIcon" id="gifSorry" src="/Content/Emoticons/sorry.gif" />
+                <img class="EmotionIcon" id="gifSpiteful" src="/Content/Emoticons/spiteful.gif" />
+                <img class="EmotionIcon" id="gifSpruce_up" src="/Content/Emoticons/spruce_up.gif" />
+                <img class="EmotionIcon" id="gifSuperstition" src="/Content/Emoticons/superstition.gif" />
+                <img class="EmotionIcon" id="gifSwoon" src="/Content/Emoticons/swoon.gif" />
+                <img class="EmotionIcon" id="gifTease" src="/Content/Emoticons/tease.gif" />
+                <img class="EmotionIcon" id="gifTender" src="/Content/Emoticons/tender.gif" />
+                <img class="EmotionIcon" id="gifThank_you" src="/Content/Emoticons/thank_you.gif" />
+                <img class="EmotionIcon" id="gifThis" src="/Content/Emoticons/this.gif" />
+                <img class="EmotionIcon" id="gifTo_become_senile" src="/Content/Emoticons/to_become_senile.gif" />
+                <img class="EmotionIcon" id="gifTo_take_umbrage" src="/Content/Emoticons/to_take_umbrage.gif" />
+                <img class="EmotionIcon" id="gifTraining" src="/Content/Emoticons/training.gif" />
+                <img class="EmotionIcon" id="gifTreaten" src="/Content/Emoticons/treaten.gif" />
+                <img class="EmotionIcon" id="gifUmnik" src="/Content/Emoticons/umnik.gif" />
+                <img class="EmotionIcon" id="gifUnknw" src="/Content/Emoticons/unknw.gif" />
+                <img class="EmotionIcon" id="gifVampire" src="/Content/Emoticons/vampire.gif" />
+                <img class="EmotionIcon" id="gifVava" src="/Content/Emoticons/vava.gif" />
+                <img class="EmotionIcon" id="gifVictory" src="/Content/Emoticons/victory.gif" />
+                <img class="EmotionIcon" id="gifWacko" src="/Content/Emoticons/wacko.gif" />
+                <img class="EmotionIcon" id="gifWhistle" src="/Content/Emoticons/whistle.gif" />
+                <img class="EmotionIcon" id="gifWink" src="/Content/Emoticons/wink.gif" />
+                <img class="EmotionIcon" id="gifWizard" src="/Content/Emoticons/wizard.gif" />
+                <img class="EmotionIcon" id="gifYahoo" src="/Content/Emoticons/yahoo.gif" />
+                <img class="EmotionIcon" id="gifYes" src="/Content/Emoticons/yes.gif" />
+                <img class="EmotionIcon" id="gifYu" src="/Content/Emoticons/yu.gif" />
+
+            </div>
+        </div>
+        <p></p>
+        <p><button id="btnSend" class="btn btn-primary" href="#bottom">Send message</button></p>
+        <p id="labelMaxlength"><label class="label label-default">The max number of characters is limited to 500</label></p>
+    </div>
+</div>

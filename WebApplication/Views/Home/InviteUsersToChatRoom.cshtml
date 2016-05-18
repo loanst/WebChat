@@ -1,0 +1,17 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Invite users to <b>@ViewBag.ChatRoom.Title</b></h4>
+    </div>
+    <div class="modal-body">
+        @using (Html.BeginForm())
+            {
+            <input type="hidden" value="@ViewBag.ChatRoomGuid" name="ChatRoomGuid" />
+                <p></p>
+                <p>Please, select the <b>participants</b>:</p>
+                @Html.ListBox("SelectedUsers", new MultiSelectList(@ViewBag.Users, "UserId", "UserName"), new { style = "width: 100%" })
+                <p></p>
+                <p><input type="submit" class="btn btn-success btn-md" value="Invite users" /></p>
+        }
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">You can edit your message</h4>
+        </div>
+        <div class="modal-body">
+            <div id="AreaToEditMsg">
+                <input id="MsgId" type="hidden" value="@ViewBag.Id" name="MsgId" />
+                <textarea id="Text" name="Text" rows="5" maxlength="500">@ViewBag.MsgText</textarea>
+                <label class="label label-default">The max number of characters is limited to 500</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-success pull-left" data-dismiss="modal" onclick="SaveEditedMessage()">Accept changes</button>
+            <button type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function SaveEditedMessage() {
+        var testData =
+            {
+                'MsgText': $("#Text").val(),
+                'MsgId': $("#MsgId").val()
+            };
+
+        $.ajax({
+            type: "POST",
+            url: "/Home/SaveEditedMessageInDatabase",
+            data: JSON.stringify(testData),
+            contentType: "application/json; charset=utf-8",
+        });
+
+        //ці функції допомагають закрити модальне вікно після другого запуску.
+        $('#editMsgModal').removeClass('fade');
+        $('#editMsgModal').modal('hide');
+    };
+</script>
+
+

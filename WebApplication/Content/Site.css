@@ -1,0 +1,219 @@
+﻿
+@import url(bootstrap.css);
+
+
+.vertical-center{
+  min-height: 70%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 70vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+
+}
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select {
+    max-width: 280px;
+}
+
+
+#Chat{
+    position:absolute;
+    overflow:auto;
+    left:5px;
+    right:40%;
+    top:50px;
+    bottom:30%;
+
+    border: 1px solid green;
+}
+#Chat table{
+    width: 100%;
+    border: 1px solid green;
+}
+
+#Chat tr{
+    margin: 0px auto;
+    padding: 0;
+    text-align: left;
+}
+
+#MsgId {
+    display: none;
+}
+
+
+#ListOfUsers{
+    position:absolute;
+    overflow:auto;
+    right:5px;
+    left:60%;
+    width:20%-5px;
+    top:50px;
+    bottom:30%;
+    border-bottom: 1px solid green;
+    
+}
+
+#ListOfChatRooms{
+    position:absolute;
+    overflow:auto;
+    right:5px;
+    width:20%;
+    top:50px;
+    bottom:30%;
+    border: 1px solid green;
+}
+
+#AreaToSendMessages{
+    position:absolute;
+    overflow:auto;
+    right:5px;
+    left:5px;
+    top:70%;
+    bottom:5px;
+    border-right: 1px solid green;
+    border-bottom: 1px solid green;
+    border-left: 1px solid green;
+}
+
+#AreaToSendMessages textarea{
+    width:83%;
+    float: left; 
+    resize: none;
+}
+#AreaToEditMsg textarea{
+    width:100%;
+    resize: none;
+}
+
+#UserGreeting{
+    text-align:center;
+}
+#labelMaxlength{
+    text-align:center;
+}
+
+.AddEmotionIcons{
+    float: left;
+    border: 1px solid transparent;
+}
+.EmotionIconsCollection{
+    display:none;
+    margin-left:-600px;
+    margin-top:-70px;
+    background:#f3f3f3;
+    height:180px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+}
+.AddEmotionIcons:hover .EmotionIconsCollection{
+    display:block;
+    position:absolute;
+    overflow:auto;
+    z-index:9999;
+    width:600px;
+}
+.AddEmotionIcons:hover {
+    border-color: lightskyblue;
+}
+.EmotionIcon {
+    border: 1px solid transparent;
+}
+.EmotionIcon:hover {
+    border-color: lightskyblue;
+}
+
+
+#MsgOptions{
+    display:flex;
+    justify-content:flex-end;
+    flex-wrap:nowrap;
+}
+ #QuoteMsg{
+     font-size:x-small;
+ }
+ #EditMsg{
+     font-size:x-small;
+ }
+ #DeleteMsg{
+     font-size:x-small;
+ }
+ #MsgData{
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+}
+  #MsgDataUnread{
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+    background:#e3e4d8;
+}
+ #MsgDataDate{
+    display:flex;
+    justify-content:flex-start;
+    font-size:x-small;
+}
+ #MsgDataSenderName{
+    display:flex;
+    justify-content:flex-start;
+    font-size:medium;
+}
+  #MsgDataText{
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    display:inline;
+    font-size:medium;
+    word-wrap: break-word;
+}
+    #MsgDataText img{
+    height: 22px;
+
+}
+    .QuoteBody{
+    margin-left:10px;
+    border: 1px solid green;
+}
+    .QuoteAuthor{
+    font-size:x-small;
+    font-style:normal;
+    font-weight:bold;
+}
+    .QuoteText{
+    font-size:x-small;
+    font-style:italic;
+    font-weight:normal;
+}
+
+    .navbar-inverse {
+  text-align:center;
+}
+    .navbar-center {
+  display: inline-block;
+  float: none; 
+}
+    .navbar-center>span {
+  position: relative;
+  display: block;
+  padding: 15px 15px;
+  color: #999999;
+}
+
